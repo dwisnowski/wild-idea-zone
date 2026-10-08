@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Wild Idea Zone - Tech DIY Projects</title>
+    <meta
+      name="description"
+      content="Wild Idea Zone: a showcase of tech-focused DIY projects in electronics, fabrication, home labs, and more."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wild Idea Zone" />
+    <meta
+      property="og:description"
+      content="A showcase of tech-focused DIY projects in electronics, fabrication, home labs, and more."
+    />
+    <meta property="og:url" content="https://www.wildideazone.com/" />
+    <style>
+      html.light { background: #f6f7fb; }
+      html.dark { background: #0b0f17; }
+    </style>
+    <!-- Mirrors MUI's InitColorSchemeScript (class selector, default storage keys) so the saved theme applies before the bundle loads. -->
+    <script>
+      (function () {
+        try {
+          var mode = localStorage.getItem("mui-mode") || "system";
+          if (mode === "system") {
+            mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          var scheme = localStorage.getItem("mui-color-scheme-" + mode) || mode;
+          document.documentElement.classList.add(scheme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
