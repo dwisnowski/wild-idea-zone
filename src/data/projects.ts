@@ -69,49 +69,6 @@ The admin side covers access roles (admin, coach, and family viewers or editors,
     image: "/projects/hypersync/base-timing.png",
     featured: true,
   },
-  {
-    slug: "garage-weather-station",
-    title: "Garage Weather Station",
-    tagline: "ESP32 sensors streaming backyard weather to a live dashboard.",
-    description:
-      "A solar-powered ESP32 sensor stack measuring temperature, humidity, pressure, wind, and rainfall. Readings are pushed over Wi-Fi to an edge API and charted in real time.",
-    tags: ["electronics", "esp32", "iot", "solar"],
-    status: "building",
-    subdomain: "weather",
-    featured: true,
-  },
-  {
-    slug: "desktop-cnc",
-    title: "Desktop CNC Router",
-    tagline: "A from-scratch 3-axis CNC built from printed parts and aluminum extrusion.",
-    description:
-      "Design files, wiring diagrams, and firmware notes for a compact CNC router that cuts wood, plastics, and PCBs. Includes the GRBL configuration and lessons learned from the first hundred cuts.",
-    tags: ["3d-printing", "cnc", "fabrication"],
-    status: "live",
-    subdomain: "cnc",
-    featured: true,
-  },
-  {
-    slug: "home-lab-rack",
-    title: "Home Lab Rack",
-    tagline: "A tiny rack of mini PCs running self-hosted everything.",
-    description:
-      "A 10-inch rack housing mini PCs, a managed switch, and a NAS. Covers the network layout, virtualization setup, backups, and monitoring.",
-    tags: ["home-lab", "networking", "self-hosting"],
-    status: "live",
-    subdomain: "lab",
-    featured: true,
-  },
-  {
-    slug: "robot-arm",
-    title: "Voice-Controlled Robot Arm",
-    tagline: "A servo arm that takes orders from a local speech model.",
-    description:
-      "An early-stage experiment pairing a 6-DOF servo arm with on-device speech recognition so it can pick and place objects by voice command.",
-    tags: ["robotics", "ai", "electronics"],
-    status: "idea",
-    subdomain: "robots",
-  },
 ];
 
 export function projectUrl(project: Project): string | undefined {
