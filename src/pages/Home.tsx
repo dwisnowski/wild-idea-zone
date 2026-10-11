@@ -8,7 +8,7 @@ import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
 export default function Home() {
-  const featured = projects.filter((p) => p.featured);
+  const featured = projects.filter((p) => p.featured).slice(0, 3);
 
   return (
     <Stack spacing={{ xs: 6, md: 10 }}>
