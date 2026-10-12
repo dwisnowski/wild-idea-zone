@@ -5,7 +5,17 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ProjectCard from "../components/ProjectCard";
+import WizParticles from "../components/WizParticles";
 import { projects } from "../data/projects";
+
+const visuallyHidden = {
+  position: "absolute",
+  width: 1,
+  height: 1,
+  overflow: "hidden",
+  clip: "rect(0 0 0 0)",
+  whiteSpace: "nowrap",
+} as const;
 
 export default function Home() {
   const featured = projects.filter((p) => p.featured).slice(0, 3);
@@ -30,20 +40,12 @@ export default function Home() {
         <Typography variant="overline" color="primary" sx={{ fontWeight: 700, letterSpacing: "0.2em" }}>
           Tech DIY projects
         </Typography>
-        <Typography variant="h1" sx={{ fontSize: { xs: "2.75rem", md: "4.5rem" }, my: 2 }}>
-          Wild Idea{" "}
-          <Box
-            component="span"
-            sx={(theme) => ({
-              background: `linear-gradient(90deg, ${(theme.vars ?? theme).palette.primary.main}, ${(theme.vars ?? theme).palette.secondary.main})`,
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            })}
-          >
-            Zone
-          </Box>
+        <Typography variant="h1" sx={visuallyHidden}>
+          Wild Idea Zone (WIZ)
         </Typography>
+        <Box sx={{ my: { xs: 1, md: 2 } }}>
+          <WizParticles />
+        </Box>
         <Typography variant="h6" component="p" color="text.secondary" sx={{ maxWidth: 640, fontWeight: 400, mb: 4 }}>
           Electronics, fabrication, home labs, and whatever else seemed like a good idea at 2am. Build logs, design
           files, and live demos for every experiment.
