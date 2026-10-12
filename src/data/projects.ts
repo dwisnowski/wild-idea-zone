@@ -69,6 +69,78 @@ The admin side covers access roles (admin, coach, and family viewers or editors,
     image: "/projects/hypersync/base-timing.png",
     featured: true,
   },
+  {
+    slug: "morse-code-trainer",
+    title: "Morse Code Trainer",
+    tagline: "Learn CW on a PCB-style dichotomous Morse chart: key dits and dahs, drill ham shorthand, and listen to real-world cadences.",
+    description: `An interactive take on the Trainer Card Pro: a vector PCB card that lays out every letter, digit, and prosign as a dit/dah decision tree. Hold Space or the on-screen key and the LED path lights up as you send, with a Web Audio CW tone (or mute it for silent practice).
+
+Practice mode turns common CW shorthand (abbreviations, Q-codes, signal reports, and full QSO lines) into Monkeytype-style send drills with WPM, accuracy, and a list of the characters you missed. Listen mode keys phrases for you at 5 to 30 WPM with standard or Farnsworth timing, different fists, and contest or ragchew cadences.
+
+It runs entirely in the browser, works on a phone, and saves settings and personal bests locally.`,
+    highlights: [
+      {
+        title: "Dichotomous chart",
+        text: "A canvas PCB card covering A–Z, 0–9, and the AR, BT, KN, and SK prosigns, with the keyed path lit in green dits and red dahs.",
+      },
+      {
+        title: "Free key",
+        text: "Hold-to-key or tap Dit / Dah, with timing-based decoding, a live decoded message, and Record / Play to audit your fist.",
+      },
+      {
+        title: "Practice drills",
+        text: "Send CW shorthand and QSO phrases by phrase count or time, with stop-on-error, typo feedback, hints, and a WPM-over-time chart.",
+      },
+      {
+        title: "Listen mode",
+        text: "Hear and watch phrases keyed with PARIS or Farnsworth timing, iambic, bug, or straight-key fists, and a to-scale rhythm strip.",
+      },
+      {
+        title: "Code chart",
+        text: "On wide screens, a live reference chart highlights what you keyed, what is playing, and what to send next. Click any row to hear it.",
+      },
+    ],
+    tags: ["ham-radio", "morse-code", "web-audio", "education"],
+    status: "live",
+    subdomain: "morse",
+    repoUrl: "https://github.com/dwisnowski/morse-code-trainer",
+    image: "/projects/morse-code-trainer/free-key.jpg",
+    featured: true,
+  },
+  {
+    slug: "boing-boing",
+    title: "Boing Boing",
+    tagline: "A physics downhill racer: launch a spring-footed robot down jagged mountains and limp across the finish, even as a tin head.",
+    description: `A browser game inspired by Kamikaze Robots. Your robot bounces down procedurally generated mountains, and landing feet-down on the slope keeps the momentum going. Holding the brace steadies your spin but bleeds speed, and a well-timed pump right before impact triggers a BOOST BOING.
+
+Bad landings rip off limbs one at a time: arm, arm, leg, leg. With only a torso left, the next slam launches the tin head free, and the run ends when it hits the ground.
+
+Climb the tournament ladder or take a quick race, and spend the microchips you earn on upgrades.`,
+    highlights: [
+      {
+        title: "Spring physics",
+        text: "Feet-down landings bounce and build speed, while crashes tumble the robot down the slope.",
+      },
+      {
+        title: "Limb loss",
+        text: "Each bad landing sheds an arm or leg, ending in a desperation tin-head launch.",
+      },
+      {
+        title: "Tournament and quick race",
+        text: "A ladder of mountain stages with progress saved locally, or a single random mountain.",
+      },
+      {
+        title: "Upgrades",
+        text: "Spend microchips on Stamina, Spin, Jump Springs, and Explosion.",
+      },
+    ],
+    tags: ["game", "physics", "canvas"],
+    status: "live",
+    subdomain: "boing",
+    repoUrl: "https://github.com/dwisnowski/boing-boing",
+    image: "/projects/boing-boing/race.jpg",
+    featured: true,
+  },
 ];
 
 export function projectUrl(project: Project): string | undefined {
