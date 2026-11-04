@@ -28,6 +28,41 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "pika",
+    title: "Pika",
+    tagline: "A BeagleBone Black monitor for one 120 V line: voltage trend, sag and swell events, and a live scope.",
+    description: `Pika watches a single 120 V, 60 Hz line-to-neutral channel so you can tell whether a voltage problem looks like a utility issue or an electrician issue. A ZMPT101B scales the mains into an AD7606, and the board's PRU samples that ADC on a hard real-time loop. It is not a certified power-quality meter.
+
+The datalogger turns that stream into sag and swell events, a continuous voltage trend, and the records behind flicker notes. A web UI on the board shows system health, live stats, the trend, and a scope.`,
+    highlights: [
+      {
+        title: "Real-time sampling",
+        text: "PRU firmware samples the AD7606 from 10 samples per second up to 180 kS/s and streams samples through a DDR ring.",
+      },
+      {
+        title: "Sag and swell events",
+        text: "One-cycle RMS sags below 90% of nominal and swells above 110% are logged, with a waveform snapshot around each event.",
+      },
+      {
+        title: "Voltage trend",
+        text: "Continuous points about every 200 ms, plus a 10-minute min, average, and max rollup for longer context.",
+      },
+      {
+        title: "Flicker notes",
+        text: "A later note that the lights blinked is searched against a couple of minutes of the trend and the event index.",
+      },
+      {
+        title: "Live scope",
+        text: "The oscilloscope view streams the waveform, and the sample-rate control changes the physical ADC rate.",
+      },
+    ],
+    tags: ["beaglebone", "power-quality", "embedded"],
+    status: "live",
+    subdomain: "pika",
+    repoUrl: "https://github.com/dwisnowski/Pika-pika",
+    image: "/projects/pika/dashboard.jpg",
+  },
+  {
     slug: "hypersync",
     title: "HyperSync",
     tagline: "High-speed softball motion analysis, base-running timing, and team stats from a Raspberry Pi in the dugout.",
@@ -139,6 +174,38 @@ Climb the tournament ladder or take a quick race, and spend the microchips you e
     subdomain: "boing",
     repoUrl: "https://github.com/dwisnowski/boing-boing",
     image: "/projects/boing-boing/race.jpg",
+    featured: true,
+  },
+  {
+    slug: "music-mind",
+    title: "Music Mind",
+    tagline: "Simply Piano–style Feedback practice in the browser: MusicXML, MIDI matching, and key-light probes for a Williams digital grand.",
+    description: `Music Mind loads MusicXML sheet music and runs a wait-for-correct-notes practice loop inspired by Simply Piano PLAY → Feedback. A vertical cursor follows the score, notes you play over Web MIDI (or CoreMIDI on iPad) are matched against the expected pitches, and an on-screen 88-key keyboard shows hints.
+
+It targets the Williams Symphony Grand II over Bluetooth or USB MIDI, including a channel-sweep probe for the piano’s undocumented key lights. Desktop Chrome/Edge use Web MIDI; iPad uses a Capacitor shell with CoreMIDI because stock Safari cannot speak MIDI.`,
+    highlights: [
+      {
+        title: "Feedback practice",
+        text: "Wait-for-me mode advances only when the correct note or chord is played, with hint and hand filters.",
+      },
+      {
+        title: "MusicXML scores",
+        text: "Load .musicxml or compressed .mxl files; OpenSheetMusicDisplay renders the staff with a practice cursor.",
+      },
+      {
+        title: "MIDI + iPad",
+        text: "Web MIDI on desktop; Capacitor + CoreMIDI with Bluetooth pairing for iPad practice at the music stand.",
+      },
+      {
+        title: "Key light probe",
+        text: "Outbound Note On channel sweep to discover Williams LED control; on-screen keyboard always works.",
+      },
+    ],
+    tags: ["music", "midi", "education", "web"],
+    status: "live",
+    subdomain: "musicmind",
+    repoUrl: "https://github.com/dwisnowski/music-mind",
+    image: "/projects/music-mind/practice.jpg",
     featured: true,
   },
 ];
