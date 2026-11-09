@@ -21,8 +21,10 @@ export interface Project {
   status: ProjectStatus;
   /** "robots" links to https://robots.wildideazone.com */
   subdomain?: string;
-  /** Path under public/ or an absolute URL */
+  /** Path under public/ or an absolute URL — card / primary shot */
   image?: string;
+  /** Extra screenshots on the project detail page (paths under public/) */
+  images?: string[];
   featured?: boolean;
 }
 
@@ -177,35 +179,78 @@ Climb the tournament ladder or take a quick race, and spend the microchips you e
     featured: true,
   },
   {
+    slug: "kernelchaos",
+    title: "KernelChaos",
+    tagline: "Family games over the internet — shared Boggle boards, short join codes, and a TV-friendly lobby.",
+    description: `KernelChaos is a Wild Idea Zone hub for family games you play across phones and the living-room screen. The first title is multiplayer Boggle: one person creates a room, everyone joins with a four-character code or QR link and a display name, then the host picks a 4×4, 5×5, or 6×6 board and starts the countdown.
+
+All players see the same letters and the same three-minute clock. Drag adjacent tiles to find words; scores tally at the end and a winner (or tie) is awarded. Sound cues celebrate longer words and warn when time is nearly up.`,
+    highlights: [
+      {
+        title: "Shared sessions",
+        text: "Durable Object rooms with live lobbies, QR join links, and host-controlled board size.",
+      },
+      {
+        title: "Drag Boggle",
+        text: "Finger-drag adjacent letters on 4×4, 5×5, or 6×6 boards with classic length scoring.",
+      },
+      {
+        title: "Phone and TV",
+        text: "Large touch targets on phones; oversized room code and QR when the host screen is on a TV.",
+      },
+      {
+        title: "Sound cues",
+        text: "Web Audio feedback for word length, countdown, and the last five seconds of the round.",
+      },
+    ],
+    tags: ["games", "multiplayer", "web", "family"],
+    status: "building",
+    subdomain: "kernelchaos",
+    repoUrl: "https://github.com/dwisnowski/KernelChaos",
+  },
+  {
     slug: "music-mind",
     title: "Music Mind",
-    tagline: "Simply Piano–style Feedback practice in the browser: MusicXML, MIDI matching, and key-light probes for a Williams digital grand.",
-    description: `Music Mind loads MusicXML sheet music and runs a wait-for-correct-notes practice loop inspired by Simply Piano PLAY → Feedback. A vertical cursor follows the score, notes you play over Web MIDI (or CoreMIDI on iPad) are matched against the expected pitches, and an on-screen 88-key keyboard shows hints.
+    tagline: "Practice, write, and play piano games in the browser — MusicXML, MIDI, Listen playback, and key lights for a Williams digital grand.",
+    description: `Music Mind is a piano practice desk that grew past wait-for-me drills. Load MusicXML (or browse MuseTrainer and Arabesque public-domain catalogs), work a Simply Piano–style Feedback loop with a vertical cursor and on-screen 88-key hints, then switch into Write to author or edit scores by playing — step entry or live metronome recording, song-form templates, local drafts, and Open in Practice.
 
-It targets the Williams Symphony Grand II over Bluetooth or USB MIDI, including a channel-sweep probe for the piano’s undocumented key lights. Desktop Chrome/Edge use Web MIDI; iPad uses a Capacitor shell with CoreMIDI because stock Safari cannot speak MIDI.`,
+Listen plays the score with optional player-piano MIDI so the instrument sounds the part, plus dual-channel Williams key lights for treble and bass. Mini-games train timing and reading without a full score: Falling Lights (L/R orbs on C3/C5), Echo Ghost (hear a phrase, play it back), and Balloon Pop (Easy/Medium/Hard note and chord sky-pop). Desktop Chrome/Edge use Web MIDI; iPad uses a Capacitor shell with CoreMIDI.`,
     highlights: [
       {
         title: "Feedback practice",
-        text: "Wait-for-me mode advances only when the correct note or chord is played, with hint and hand filters.",
+        text: "Wait-for-me mode advances only on the correct note or chord, with hints, hand filters, and piano edge-key controls.",
       },
       {
-        title: "MusicXML scores",
-        text: "Load .musicxml or compressed .mxl files; OpenSheetMusicDisplay renders the staff with a practice cursor.",
+        title: "Write mode",
+        text: "Step or live entry into an editable score, song-form scaffolds, IndexedDB drafts, MusicXML download, and Open in Practice.",
+      },
+      {
+        title: "Listen + lights",
+        text: "Score playback with optional MIDI out to the piano, plus treble/bass Williams LED channels discovered by a channel sweep.",
+      },
+      {
+        title: "Mini-games",
+        text: "Falling Lights, Echo Ghost, and Balloon Pop for two-hand timing, echo memory, and note/chord reading.",
+      },
+      {
+        title: "Score libraries",
+        text: "Bundled Quick start samples plus remote MuseTrainer and Arabesque public-domain catalogs over the network.",
       },
       {
         title: "MIDI + iPad",
-        text: "Web MIDI on desktop; Capacitor + CoreMIDI with Bluetooth pairing for iPad practice at the music stand.",
-      },
-      {
-        title: "Key light probe",
-        text: "Outbound Note On channel sweep to discover Williams LED control; on-screen keyboard always works.",
+        text: "Web MIDI on desktop; Capacitor + CoreMIDI with Bluetooth pairing for practice at the music stand.",
       },
     ],
-    tags: ["music", "midi", "education", "web"],
+    tags: ["music", "midi", "education", "web", "games"],
     status: "live",
     subdomain: "musicmind",
     repoUrl: "https://github.com/dwisnowski/music-mind",
     image: "/projects/music-mind/practice.jpg",
+    images: [
+      "/projects/music-mind/write.jpg",
+      "/projects/music-mind/balloon-pop.jpg",
+      "/projects/music-mind/falling-lights.jpg",
+    ],
     featured: true,
   },
 ];
